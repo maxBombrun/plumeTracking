@@ -1,4 +1,4 @@
-# lipidDroplets
+# PlumeTracking
 
 Detects and parameterises volcanic plume in thermal videos.
 
