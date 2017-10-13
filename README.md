@@ -17,8 +17,8 @@ The aim is to improve models for plume dynamics and automated monitoring in near
 
 Modify the mainTrackPlume.m file to define the inputName variable, i.e., the absolute path of the data.
 The format of the frames is supposed to be indexed:
-    - in numerical order, preferably with the same number of decimal. 
-    - in a clearly separated way from the name of the set by one of the following character: [',' ';' '_' '-' '.' ':'].
+- in numerical order, preferably with the same number of decimal. 
+- in a clearly separated way from the name of the set by one of the following character: [',' ';' '_' '-' '.' ':'].
 
 For example:
 A dataset containing more than 100 frames should be named: 
