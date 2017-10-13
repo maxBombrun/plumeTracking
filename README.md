@@ -11,7 +11,7 @@ It also extracts several parameters such as the height and the width of the plum
 
 The aim is to improve models for plume dynamics and automated monitoring in near-real time of volcanic eruptions.
 
-
+Note: This algorithm was, originally, not developped to process videos recorded using cameras operating in the visible wavelengths but still give some good results. Feel free to try.
 
 ## Usage
 
@@ -35,7 +35,7 @@ This algorithm requires two toolboxes:
 
 ## Credits
 
-This project was funded by the French Government Laboratory of Excellence initiative no. ANR-10-LABX-0006, the Région Auvergne and the European Regional Development Fund
+This project was funded by the French Government Laboratory of Excellence initiative no. ANR-10-LABX-0006, the Région Auvergne and the European Regional Development Fund.
 
 
 ## License 
