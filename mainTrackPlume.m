@@ -22,19 +22,13 @@ else
 end
 
 freq=15;
-% currName=strsplit(listImg(2).name,{'_','T'});
-% currName=currName{2};
-% prevName=strsplit(listImg(1).name,{'_','T'});
-% prevName=prevName{2};
-% currName-prevName
 
-%[, nbFrame]=loadImg(deb,inputName);
 src= load([inputName listImg(deb+1).name]);
 src=src.Frame;
 nbFrame= length(listImg);
 fin=deb+nbFrame-1;
 step=computeTimeStep(inputName, nbFrame);
-fprintf(char(fin))
+
 entete={'Frame' 'Relative Time (s)' 'Height (pix)' 'Width (pix)'};
 contenu=cell(10,4);
 
