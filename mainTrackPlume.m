@@ -1,5 +1,5 @@
-function mainTrackPlume(input_args  )
-%MAINTRACKPLUME Summary of this function goes here
+function mainTrackPlume( )
+%MAINTRACKPLUME 
 %   Main routine of the plume algorithm
 
 %% Load data set and Initialisation
@@ -28,7 +28,7 @@ src=src.Frame;
 nbFrame= length(listImg);
 fin=deb+nbFrame-1;
 step=computeTimeStep(inputName, nbFrame);
-
+fin= fin-mod(fin-deb,step)-1;
 entete={'Frame' 'Relative Time (s)' 'Height (pix)' 'Width (pix)'};
 contenu=cell(10,4);
 
