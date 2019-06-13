@@ -1,4 +1,4 @@
-function [ output_args ] = mainTrackPlume( input_args )
+function mainTrackPlume(input_args  )
 %MAINTRACKPLUME Summary of this function goes here
 %   Main routine of the plume algorithm
 
@@ -22,11 +22,19 @@ else
 end
 
 freq=15;
+% currName=strsplit(listImg(2).name,{'_','T'});
+% currName=currName{2};
+% prevName=strsplit(listImg(1).name,{'_','T'});
+% prevName=prevName{2};
+% currName-prevName
 
-[src, nbFrame]=loadImg(deb,inputName);
+%[, nbFrame]=loadImg(deb,inputName);
+src= load([inputName listImg(deb+1).name]);
+src=src.Frame;
+nbFrame= length(listImg);
 fin=deb+nbFrame-1;
 step=computeTimeStep(inputName, nbFrame);
-
+fprintf(char(fin))
 entete={'Frame' 'Relative Time (s)' 'Height (pix)' 'Width (pix)'};
 contenu=cell(10,4);
 
@@ -48,7 +56,7 @@ set(gca,'position',[0 0 1 1],'units','normalized')
 colormap(jet);
 
 %% Run through all images
-for i=deb: step:fin
+for i=deb:step:fin
     % Extract mask
     [contour, mask] = trackingPlume(i,inputName,step);
     zoneT=find(mask==1);
@@ -113,6 +121,7 @@ for i=deb: step:fin
     %%%%%%%%%%%%%%%%%%% GIF %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     
     %% Save information in 'content'
+    listImg(i+step).name
     time=i/freq;
     [H,M,S]=secs2hms(time);
     time=[sprintf('%02.0f', H) ':' sprintf('%02.0f', M) ':' sprintf('%02.0f', S)];
